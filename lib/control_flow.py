@@ -31,15 +31,34 @@ def fizzbuzz(num):
     
 def calculator(operation, num1, num2):
     # your code here
-    match operation:
-        case '+':
-            return num1 + num2
-        case '-':
-            return num1 - num2
-        case '/':
-            return num1 / num2
-        case '*':
-            return num1 * num2
-        case _:
-            print('Invalid operation!')
-            return None
+    
+    # Doesn't work since it's a newer syntax
+    
+    # match operation:
+    #     case '+':
+    #         return num1 + num2
+    #     case '-':
+    #         return num1 - num2
+    #     case '/':
+    #         return num1 / num2
+    #     case '*':
+    #         return num1 * num2
+    #     case _:
+    #         print('Invalid operation!')
+    #         return None
+        
+    dict_map = {
+        '+': num1 + num2,
+        '-': num1 - num2,
+        '/': num1 / num2,
+        '*': num1 * num2
+    }
+    
+    
+    ans = dict_map.get(operation)
+
+    if (not ans):
+        print('Invalid operation!')
+    return ans
+    
+calculator('a', 1, 2)
